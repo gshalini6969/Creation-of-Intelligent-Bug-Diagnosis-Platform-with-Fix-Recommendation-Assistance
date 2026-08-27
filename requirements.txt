@@ -1,0 +1,16 @@
+# Core backend — FastAPI is the sole backend framework (Flask removed)
+scikit-learn==1.5.2
+
+fastapi==0.115.6
+uvicorn==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+
+# RAG layer (backend/rag/) — local embeddings + FAISS vector search
+sentence-transformers==5.7.0
+faiss-cpu==1.15.0
+
+# --- Reserved for later AI milestones (not installed yet) ---
+# spacy
+# nltk
+# anthropic

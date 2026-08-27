@@ -1,0 +1,23 @@
+Bug ID,Submission Date,Submission Time,Bug Title,Bug Description,Stack Trace,Module Name,Category,Severity,Priority,Reporter Name,Uploaded Log File Name,Status,Actual Root Cause,Actual Fix,Resolution Notes,Resolution Date
+BUG-0001,2026-08-27,18:04:28,Login fails with NullPointerException in LoginService,"Users report that login intermittently fails. Authentication crashes while validating the user object — the session/user object appears to be null at the point of validation, not an invalid password.","java.lang.NullPointerException: Cannot invoke ""User.getId()"" because ""user"" is null
+	at com.example.auth.LoginService.validateUser(LoginService.java:47)
+	at com.example.auth.LoginService.login(LoginService.java:22)",auth-service,Authentication,High,High,Priya Nair,,Resolved,The session object was not initialized before LoginService.validateUser() read it — a race condition on first login after a service restart.,"Added a null check with a clear error before use, and fixed session initialization order in LoginService so the session object is guaranteed to exist before validateUser() runs.",Verified with load test simulating cold-start logins.,2026-08-27 18:04:28
+BUG-0002,2026-08-27,18:04:28,MySQL connection refused under peak load,"Application cannot connect to the database during peak traffic hours. MySQL connection refused, and requests eventually time out.","com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+Caused by: java.net.ConnectException: Connection refused
+	at com.example.db.ConnectionPool.getConnection(ConnectionPool.java:33)",db-service,Database,Critical,Critical,Miguel Torres,,Open,,,,
+BUG-0003,2026-08-27,18:04:28,ArrayIndexOutOfBoundsException while processing uploaded images,The application crashes while processing an image because an array index is outside the valid range. Happens only for images with unusual aspect ratios.,"java.lang.ArrayIndexOutOfBoundsException: Index 512 out of bounds for length 512
+	at com.example.media.ImageProcessor.resize(ImageProcessor.java:88)",media-service,Backend,Medium,Medium,Wei Zhang,,Open,,,,
+BUG-0004,2026-08-27,18:04:28,Submit button unresponsive on Safari mobile,The submit button on the bug report form does not respond to taps on Safari for iOS. Works correctly on Chrome and Firefox.,TypeError: undefined is not a function (near '...form.submit...'),frontend-web,UI,Medium,Low,Sofia Rossi,,Resolved,"A CSS pointer-events rule was unintentionally applied to the button's parent element on narrow viewports, which Safari treats differently.",Removed the conflicting rule and added a mobile-specific test.,,2026-08-27 18:04:28
+BUG-0005,2026-08-27,18:04:28,Dashboard takes over 8 seconds to load under normal traffic,"The dashboard page is noticeably slow to load, even outside peak hours. Users report waiting several seconds before stats appear.",,dashboard-service,Performance,Medium,Medium,James Okafor,,Open,,,,
+BUG-0006,2026-08-28,00:26:49,Database connection refused,The application cannot connect to the PostgreSQL database. Requests fail whenever the database connection pool is exhausted.,"org.postgresql.util.PSQLException: Connection to database refused
+Caused by: java.net.ConnectException: Connection refused
+at org.postgresql.core.PGStream.createSocket(PGStream.java:245)
+at com.example.db.DatabaseConnection.connect(DatabaseConnection.java:82)",database-service,Database,Critical,Critical,Test user,,Open,,,,
+BUG-0007,2026-08-28,00:27:44,Payment API request timeout,Payment requests are timing out when the external payment service takes longer than expected to respond.,"java.net.SocketTimeoutException: Read timed out
+at java.net.SocketInputStream.socketRead0(Native Method)
+at com.example.payment.PaymentClient.processPayment(PaymentClient.java:91)
+at com.example.payment.PaymentService.pay(PaymentService.java:54)",payment-service,API,High,High,Test user,,Open,,,,
+BUG-0008,2026-08-28,00:28:24,Dashboard crashes when loading user data,The dashboard crashes when the API returns an empty user object. The frontend attempts to access a property that does not exist.,"TypeError: Cannot read properties of undefined (reading 'name')
+at UserDashboard.jsx:42:18
+at renderWithHooks (react-dom.js:15486:18)
+at updateFunctionComponent (react-dom.js:19617:20)",frontend-dashboard,Frontend,Medium,Medium,Test user,,Open,,,,

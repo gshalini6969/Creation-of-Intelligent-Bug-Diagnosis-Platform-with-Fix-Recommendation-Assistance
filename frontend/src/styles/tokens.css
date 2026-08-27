@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Design tokens — Intelligent Bug Diagnosis Platform
+   Single source of truth for color, type, spacing, radius, and shadow.
+   Every page/component should consume these variables instead of
+   hardcoding hex values, so the product looks and feels cohesive.
+   ========================================================================== */
+
+:root {
+  /* --- Surfaces --- */
+  --color-bg: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #fafbfd;
+  --color-border: #e4e7ee;
+  --color-border-strong: #d7dbe4;
+
+  /* --- Text --- */
+  --color-text: #14171f;
+  --color-text-secondary: #4b5266;
+  --color-text-muted: #767e91;
+  --color-text-inverse: #ffffff;
+
+  /* --- Brand / accent --- */
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+  --color-accent-soft: #eef2ff;
+  --color-accent-soft-border: #c7d2fe;
+
+  /* --- Semantic status --- */
+  --color-success: #178a4c;
+  --color-success-soft: #e6f7ee;
+  --color-warning: #a06600;
+  --color-warning-soft: #fff4dc;
+  --color-danger: #cc3f3f;
+  --color-danger-soft: #fceeee;
+  --color-info: #2f6fed;
+  --color-info-soft: #eaf1fe;
+  --color-neutral: #565f75;
+  --color-neutral-soft: #eef0f5;
+
+  /* Severity scale (distinct from generic status, used across the app) */
+  --color-severity-low: var(--color-success);
+  --color-severity-low-soft: var(--color-success-soft);
+  --color-severity-medium: var(--color-warning);
+  --color-severity-medium-soft: var(--color-warning-soft);
+  --color-severity-high: #c96a1f;
+  --color-severity-high-soft: #fdeee0;
+  --color-severity-critical: var(--color-danger);
+  --color-severity-critical-soft: var(--color-danger-soft);
+
+  /* --- Typography --- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SFMono-Regular", ui-monospace, Consolas, "Liberation Mono", Menlo, monospace;
+
+  --text-page-title: 1.75rem;   /* ~28px */
+  --text-section-title: 1.25rem; /* ~20px */
+  --text-card-title: 1.05rem;    /* ~17px */
+  --text-body: 0.9375rem;        /* ~15px */
+  --text-meta: 0.8125rem;        /* ~13px */
+  --text-label: 0.75rem;         /* ~12px */
+
+  --line-height-heading: 1.25;
+  --line-height-body: 1.6;
+
+  /* --- Spacing scale --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+
+  /* --- Radius --- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* --- Shadow --- */
+  --shadow-sm: 0 1px 2px rgba(20, 23, 31, 0.04);
+  --shadow-md: 0 4px 14px rgba(20, 23, 31, 0.06);
+  --shadow-focus: 0 0 0 3px var(--color-accent-soft-border);
+
+  /* --- Layout --- */
+  --content-max-width: 1160px;
+  --header-height: 64px;
+
+  /* --- AI vs. historical-evidence distinction (Analyze Bug page) --- */
+  --color-ai-accent: var(--color-accent);
+  --color-ai-accent-soft: var(--color-accent-soft);
+  --color-evidence-accent: #0f8b8d;
+  --color-evidence-accent-soft: #e4f6f6;
+
+  /* --- Pipeline stepper --- */
+  --color-step-pending: var(--color-border-strong);
+  --color-step-pending-bg: var(--color-surface-muted);
+  --color-step-active: var(--color-accent);
+  --color-step-done: var(--color-success);
+  --color-step-done-bg: var(--color-success-soft);
+
+  /* --- Motion --- */
+  --transition-fast: 120ms ease;
+  --transition-base: 180ms ease;
+}

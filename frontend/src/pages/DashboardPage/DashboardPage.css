@@ -1,0 +1,245 @@
+.dash-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dash-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.dash-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.dash-status {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  color: #6b7280;
+}
+
+.dash-status--error {
+  background-color: #fdeeee;
+  color: #d94f4f;
+  border: 1px solid rgba(217, 79, 79, 0.25);
+}
+
+.dash-empty {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+}
+
+.dash-empty h2 {
+  margin: 0 0 0.5rem;
+}
+
+.dash-empty p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* Stat cards */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.dash-stat-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  padding: 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 3px solid #e2e6ee;
+}
+
+.dash-stat-card--open { border-top-color: #4b5566; }
+.dash-stat-card--progress { border-top-color: #b8860b; }
+.dash-stat-card--resolved { border-top-color: #1f9d55; }
+.dash-stat-card--critical { border-top-color: #d94f4f; }
+.dash-stat-card--rate { border-top-color: #4c7cf0; }
+
+.dash-stat-card__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6b7280;
+}
+
+.dash-stat-card__value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+/* Section cards (breakdowns, recent bugs) */
+.dash-section {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+}
+
+.dash-section h2 {
+  margin: 0 0 1.1rem;
+  font-size: 1.05rem;
+}
+
+/* Bar list (Category / Severity breakdowns) */
+.dash-bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.dash-bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 2.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.dash-bar-row__label {
+  color: #1f2430;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Visible chart bars: light gray track, clearly-contrasting indigo fill. */
+.dash-bar-track {
+  background-color: #e9ecf3;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.dash-bar-fill {
+  display: block;
+  background-color: #4c7cf0;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.dash-bar-row__count {
+  text-align: right;
+  color: #6b7280;
+}
+
+/* Recent Bugs */
+.dash-recent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.dash-recent-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #e2e6ee;
+}
+
+.dash-recent-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.dash-recent-item__main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.dash-recent-item__id {
+  font-weight: 600;
+  color: #4c7cf0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.dash-recent-item__title {
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-recent-item__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.dash-recent-item__link {
+  color: #4c7cf0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dash-recent-item__link:hover {
+  text-decoration: underline;
+}
+
+/* Pills */
+.dash-pill {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dash-pill--status-open { background-color: #eef1f6; color: #4b5566; }
+.dash-pill--status-in-progress { background-color: #fff6e0; color: #b8860b; }
+.dash-pill--status-resolved { background-color: #eafaf0; color: #1f9d55; }
+
+.dash-pill--severity-low { background-color: #eafaf0; color: #1f9d55; }
+.dash-pill--severity-medium { background-color: #fff6e0; color: #b8860b; }
+.dash-pill--severity-high { background-color: #fdeee0; color: #c9631b; }
+.dash-pill--severity-critical { background-color: #fdeeee; color: #d94f4f; }
+.dash-pill--severity-default { background-color: #eef1f6; color: #6b7280; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dash-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dash-bar-row {
+    grid-template-columns: 100px 1fr 2.5rem;
+  }
+
+  .dash-recent-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

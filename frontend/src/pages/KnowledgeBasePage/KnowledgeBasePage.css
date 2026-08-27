@@ -1,0 +1,354 @@
+.kb-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.kb-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.kb-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.kb-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.kb-count {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4c7cf0;
+  white-space: nowrap;
+}
+
+.kb-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.kb-controls input[type="search"] {
+  flex: 1 1 260px;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.kb-controls select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background-color: #fbfcfe;
+}
+
+.kb-status {
+  color: #6b7280;
+  padding: 0.5rem 0;
+}
+
+.kb-status--error {
+  color: #d94f4f;
+}
+
+.kb-empty {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+}
+
+.kb-empty h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.kb-empty p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.kb-table-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ee;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.kb-table thead th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6b7280;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e2e6ee;
+  background-color: #fafbfd;
+}
+
+.kb-table tbody tr {
+  cursor: pointer;
+}
+
+.kb-table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+.kb-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #e2e6ee;
+}
+
+.kb-table td {
+  padding: 0.75rem 1rem;
+}
+
+.kb-col-id {
+  font-weight: 600;
+  color: #4c7cf0;
+  white-space: nowrap;
+}
+
+/* Badges */
+.kb-badge {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.kb-badge--low { background-color: #eafaf0; color: #1f9d55; }
+.kb-badge--medium { background-color: #fff6e0; color: #b8860b; }
+.kb-badge--high { background-color: #fdeee0; color: #c9631b; }
+.kb-badge--critical { background-color: #fdeeee; color: #d94f4f; }
+.kb-badge--status-open { background-color: #eef1f6; color: #4b5566; }
+.kb-badge--status-in-progress { background-color: #fff6e0; color: #b8860b; }
+.kb-badge--status-resolved { background-color: #eafaf0; color: #1f9d55; }
+.kb-badge--default { background-color: #eef1f6; color: #6b7280; }
+
+/* Modal */
+.kb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 17, 23, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4vh 1rem;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.kb-modal {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem 2rem 2rem;
+  box-shadow: 0 12px 32px rgba(15, 17, 23, 0.2);
+}
+
+.kb-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #9096a3;
+  cursor: pointer;
+}
+
+.kb-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e6ee;
+  padding-bottom: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.kb-modal-id {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4c7cf0;
+  margin-bottom: 0.2rem;
+}
+
+.kb-modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.kb-modal-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.kb-modal-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.kb-modal-meta dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.15rem;
+}
+
+.kb-modal-meta dd {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.kb-modal-section {
+  margin-bottom: 1.1rem;
+}
+
+.kb-modal-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 0.4rem;
+}
+
+.kb-modal-section p {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.kb-modal-section pre {
+  background-color: #f6f8fb;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 0;
+}
+
+.kb-resolve-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kb-resolve-action button {
+  background-color: #4c7cf0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kb-resolve-form {
+  border-top: 1px solid #e2e6ee;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.kb-resolve-form h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 0.8rem;
+}
+
+.kb-resolve-form .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+
+.kb-resolve-form label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.kb-resolve-form textarea {
+  font-family: inherit;
+  font-size: 0.88rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+}
+
+.kb-resolve-status {
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 0.8rem;
+}
+
+.kb-resolve-status--error {
+  background-color: #fdeeee;
+  color: #d94f4f;
+}
+
+.kb-resolve-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.kb-resolve-form__actions button {
+  border-radius: 8px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.kb-resolve-form__actions button[type="submit"] {
+  background-color: #4c7cf0;
+  color: #fff;
+}
+
+.kb-resolve-form__actions button.secondary {
+  background-color: transparent;
+  color: #4c7cf0;
+  border: 1px solid #4c7cf0;
+}
+
+@media (max-width: 640px) {
+  .kb-modal-meta {
+    grid-template-columns: 1fr;
+  }
+}
