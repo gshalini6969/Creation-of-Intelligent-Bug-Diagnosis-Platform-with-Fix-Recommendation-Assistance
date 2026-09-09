@@ -21,3 +21,7 @@ BUG-0008,2026-08-28,00:28:24,Dashboard crashes when loading user data,The dashbo
 at UserDashboard.jsx:42:18
 at renderWithHooks (react-dom.js:15486:18)
 at updateFunctionComponent (react-dom.js:19617:20)",frontend-dashboard,Frontend,Medium,Medium,Test user,,Open,,,,
+BUG-0009,2026-09-01,22:53:38,Login fails with NullPointerException,Users are unable to login after the authentication service restarts.,"java.lang.NullPointerException: Cannot invoke ""User.getId()"" because ""user"" is null
+at com.example.auth.LoginService.validateUser(LoginService.java:47)
+at com.example.auth.LoginService.login(LoginService.java:22)
+at com.example.auth.LoginController.login(LoginController.java:15)",auth-service,Authentication,High,High,Shalini,,Open,,,,
